@@ -1,2 +1,22 @@
 # Rider Segmentation in Action
+
+## Executive Summary
 This project is an end‑to‑end analytics case study using 24 months of Divvy bike trip data (Jan 2024–Dec 2025) to understand how members and casual riders use the system differently. Starting from raw monthly CSV exports, I built a unified dataset, engineered temporal features (month, weekday, hour) and trip metrics (duration, round trips), and then segmented behavior by rider type. The analysis quantifies differences in volume, seasonality, time‑of‑day patterns, and bike‑type preferences between members and casual users, and explores route‑level flows to distinguish commuting corridors from leisure and tourist trips. The notebook demonstrates a full analytics workflow—from data ingestion and cleaning through visual storytelling and rider‑segment insights—aimed at informing pricing, station planning, and membership marketing strategy for shared micromobility systems.
+
+## Business Understandning
+
+
+## Data Understanding
+
+
+## Data Preparation
+
+
+## Modeling
+
+
+## Evaluation
+
+
+## Deployment
+
