@@ -1,59 +1,130 @@
-# Rider Segmentation in Action: Divvy Member vs Casual Usage Analytics
+# Rider Segmentation in Action:  
+### Divvy Member vs Casual Usage Analytics
 
-This project is an end-to-end analytics case study using 24 months of Divvy bike trip data from January 2024 through December 2025 to understand how members and casual riders use the system differently. The analysis is designed as a portfolio-ready project that moves beyond generic exploratory analysis by focusing on rider segmentation, behavioral patterns, and business implications.
+This project is an end-to-end analytics case study that applies the CRISP-DM framework to 24 months of Divvy trip data from January 2024 through December 2025. The goal is to understand how members and casual riders use Divvy differently and to translate those behavioral differences into actionable business recommendations for shared micromobility operations, marketing, and rider conversion.
 
-## Objective
+## CRISP-DM overview
 
-The objective of this project is to identify how Divvy members and casual riders differ in their usage behavior across a two-year period. The analysis focuses on differences in trip volume, ride duration, seasonality, day-of-week behavior, hour-of-day trends, route patterns, and bike-type preferences.
+CRISP-DM structures the project into six phases: Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, and Deployment. This README uses that framework to organize the work as a portfolio-ready analytics case study rather than a generic exploratory analysis exercise.
 
-## Data
+## 1. Business understanding
 
-The dataset consists of 24 monthly Divvy trip files covering January 2024 to December 2025. Each trip record includes ride timestamps, station names and IDs, start and end coordinates, bike type, and rider classification through the `member_casual` field. The uploaded sample files show the core schema used in the project, including fields such as `ride_id`, `rideable_type`, `started_at`, `ended_at`, station information, coordinates, and `member_casual`.
+The central business problem is to determine how Divvy members and casual riders differ in their behavior and how those differences can support better operational and commercial decisions. The analysis is designed to answer questions about trip frequency, ride duration, seasonality, commuting behavior, station usage, and bike-type preferences across rider segments.
 
-## Methods
+### Business objectives
 
-The analysis begins by combining all monthly CSV files into a unified dataset and standardizing field names and formats. Data cleaning removes invalid or unrealistic trips, such as negative durations, zero-length rides, and extreme outliers, while timestamp fields are converted into analysis-ready datetime variables.
+- Identify key behavioral differences between member and casual riders.
+- Understand when and where each segment uses Divvy most often.
+- Support recommendations for membership conversion, station balancing, and seasonal bike allocation.
+- Present the work as an end-to-end analytics case study suitable for a data analytics portfolio.
 
-Feature engineering adds variables such as ride length in minutes, year, month, day of week, hour of day, weekend indicator, route pairs, and round-trip flags. Aggregations are then created by rider type, month, hour, weekday, route, and bike type to compare member and casual usage patterns consistently across the full period.
+### Key business questions
 
-## Analysis focus
+- Do members and casual riders show different weekday, weekend, and hourly usage patterns?
+- Are casual riders more concentrated in leisure or tourist-oriented trips while members exhibit commuter behavior?
+- Which bike types are more popular with each rider segment?
+- How did rider behavior change between 2024 and 2025?
 
-The project is structured around a rider-segmentation lens rather than generic EDA. Key questions include when members and casual riders ride, how long they ride, which bike types they prefer, which station pairs they use most often, and how these behaviors changed from 2024 to 2025.
+## 2. Data understanding
 
-Primary comparison areas include:
+The dataset consists of 24 monthly Divvy trip files covering January 2024 through December 2025. Each trip record contains ride timestamps, bike type, rider class, station information, and trip coordinates, which support both temporal and route-based analysis.
 
-- Total rides and ride share by rider type.
+### Available fields
+
+The uploaded Divvy sample files show the core schema used throughout the project, including the following columns:
+
+- `ride_id`
+- `rideable_type`
+- `started_at`, `ended_at`
+- `start_station_name`, `start_station_id`
+- `end_station_name`, `end_station_id`
+- `start_lat`, `start_lng`, `end_lat`, `end_lng`
+- `member_casual`
+
+### Data understanding goals
+
+- Confirm consistent schema across all monthly files.
+- Check for null or inconsistent station values, especially for certain bike trips.
+- Understand the distribution of ride durations and detect invalid trips.
+- Verify that `member_casual` can be used reliably for rider segmentation.
+
+## 3. Data preparation
+
+The preparation phase combines all monthly files into one analysis-ready dataset and creates the features needed for rider-segmentation analysis. This phase forms the foundation of the project because the quality of the behavioral comparisons depends on consistent timestamps, valid trip durations, and standardized rider and bike-type values.
+
+### Cleaning steps
+
+- Combine all 24 monthly CSV files into one unified dataset.
+- Standardize column names and data types.
+- Convert `started_at` and `ended_at` into datetime fields.
+- Remove invalid rides, such as negative durations, zero-length trips, and unrealistic outliers.
+- Standardize `member_casual` and `rideable_type` values for consistent grouping.
+
+### Feature engineering
+
+- `ride_length_min`: trip duration in minutes.
+- `year` and `month`: for year-over-year and seasonal analysis.
+- `day_of_week` and `hour`: for weekly and hourly behavior analysis.
+- `weekend`: indicator to separate leisure-oriented behavior from weekday usage.
+- `route`: start-station to end-station pair for route analysis.
+- `round_trip`: indicator for rides that start and end at the same station.
+
+### Prepared outputs
+
+- Cleaned analysis dataset.
+- Aggregated summary tables by rider type, month, hour, weekday, bike type, and route.
+- Visualization-ready datasets saved to the `output/` directory.
+
+## 4. Modeling
+
+The project uses descriptive and segmentation-focused analytics rather than predictive machine learning. In the CRISP-DM context, the modeling phase centers on aggregation logic, behavioral comparison, and pattern detection across the member and casual rider segments.
+
+### Analytical approach
+
+The analysis compares members and casual riders across multiple behavioral dimensions:
+
+- Total ride volume and ride share.
 - Monthly seasonality and year-over-year changes.
-- Weekday versus weekend behavior.
-- Hourly riding patterns and commuter peaks.
+- Day-of-week and hour-of-day usage patterns.
 - Ride duration differences.
 - Bike-type preferences.
 - Top origin-destination routes by rider segment.
 
+### Planned analysis artifacts
 
-## Findings
+- Bar charts for total rides and bike-type preferences.
+- Line charts for monthly and hourly usage trends.
+- Weekday comparison charts for member versus casual behavior.
+- Route-level summary tables to distinguish commuting and leisure patterns.
 
-This section should present the final computed insights once the full pipeline is run on all 24 files. Expected examples include stronger weekday commute peaks among members, heavier weekend and leisure-oriented usage among casual riders, and different preferences in ride duration or electric-bike adoption across rider segments. Final findings should be supported with charts and summary tables generated from the cleaned dataset.
+## 5. Evaluation
 
-## Implications
+The evaluation phase determines whether the analysis answers the business questions clearly and credibly. Success is measured not by model accuracy, but by whether the results reveal distinct rider-segment behaviors that can support business decisions.
 
-The analysis is intended to translate rider behavior into operational and commercial implications for a bike-share system. Member and casual differences can inform pricing strategy, membership conversion campaigns, station rebalancing, and seasonal bike allocation decisions.
+### Evaluation criteria
 
-Potential implications include:
+- Whether the results clearly distinguish member and casual usage patterns.
+- Whether the observed patterns are consistent across multiple views, such as month, day, hour, and route.
+- Whether the cleaning and feature-engineering steps are transparent and reproducible.
+- Whether the findings lead to practical recommendations for marketing and operations.
 
-- Converting high-frequency casual riders into members through targeted offers.
-- Increasing bike and dock availability near commuter corridors during weekdays.
-- Adjusting station coverage and rebalancing near leisure and tourist destinations on weekends.
-- Planning seasonal operations around summer demand spikes and winter usage drops.
+### Expected findings
 
+This section should be updated once the full analysis is complete. Likely findings include stronger weekday commute peaks among members, heavier weekend and leisure-oriented riding among casual users, and segment-level differences in trip duration or electric-bike usage.
 
-## Business actions
+## 6. Deployment
 
-This project is positioned as an analytics case study with business relevance, not only as a technical exercise. Recommended actions should connect the findings to measurable decisions such as improving retention, expanding member acquisition, optimizing station operations, and allocating bike types more efficiently by segment and season.
+The deployment phase focuses on presenting the analysis in a reproducible, portfolio-ready format that can be reviewed by recruiters, hiring managers, or stakeholders. The project is designed for a Python script workflow in VS Code so the full pipeline can be rerun from raw data through cleaned outputs, tables, and charts.
 
-## Project structure
+### Deliverables
 
-A recommended Python project structure for this analysis is shown below:
+- A modular Python project with reusable scripts.
+- A cleaned, analysis-ready dataset.
+- Aggregated summary tables.
+- Charts highlighting rider-segment behavior.
+- A final README with business context, methods, findings, and recommendations.
+
+### Recommended project structure
 
 ```text
 divvy-user-analysis/
@@ -75,24 +146,15 @@ divvy-user-analysis/
 ```
 
 
+
+## Business actions
+
+The final business recommendations are expected to connect rider-segmentation findings to operational and growth opportunities. Potential actions include converting high-frequency casual users into members, improving weekday dock availability near commuter corridors, increasing weekend capacity near leisure destinations, and aligning bike allocation with seasonal demand shifts.
+
 ## Tools
 
-Suggested Python tools for this project include pandas and NumPy for data processing, matplotlib or seaborn for visualization, and pyarrow for efficient storage of processed datasets. A script-based workflow in VS Code helps keep the pipeline modular, reproducible, and easy to rerun as additional files or metrics are added.
-
-## Deliverables
-
-A complete version of this project should include:
-
-- A cleaned, analysis-ready dataset.
-- Aggregated summary tables by rider segment.
-- Visualizations for monthly, hourly, weekday, and bike-type patterns.
-- Route-level analysis for top station pairs.
-- A final summary of behavioral differences between members and casual riders.
-- Business recommendations based on rider segmentation insights.
-
+Suggested tools for this project include pandas and NumPy for data preparation, matplotlib or seaborn for visualization, and pyarrow for efficient storage of processed outputs. A script-based VS Code workflow keeps the project modular, reproducible, and easy to maintain as the analysis evolves.
 
 ## Portfolio value
 
-This project demonstrates an end-to-end analytics workflow using real trip-level transportation data. It highlights practical skills in data cleaning, feature engineering, segmentation analysis, time-series aggregation, visualization, and business storytelling, which makes it suitable for analytics, BI, and data analyst portfolios.
-
-<div align="center">THE END</div>
+This project demonstrates an end-to-end analytics workflow using real trip-level mobility data and a recognized industry methodology. Organizing the work with CRISP-DM makes the project easier to explain to recruiters because it shows business framing, structured analysis, reproducible preparation, and clear decision-oriented outcomes.
