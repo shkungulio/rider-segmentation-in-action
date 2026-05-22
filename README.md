@@ -95,4 +95,4 @@ A complete version of this project should include:
 
 This project demonstrates an end-to-end analytics workflow using real trip-level transportation data. It highlights practical skills in data cleaning, feature engineering, segmentation analysis, time-series aggregation, visualization, and business storytelling, which makes it suitable for analytics, BI, and data analyst portfolios.
 
-<div align="center">⁂</div>
+<div align="center">THE END</div>
