@@ -1,5 +1,5 @@
 # Rider Segmentation in Action:  
-### Divvy Member vs Casual Usage Analytics
+**Divvy Member vs Casual Usage Analytics**
 
 This project is an end-to-end analytics case study that applies the CRISP-DM framework to 24 months of Divvy trip data from January 2024 through December 2025. The goal is to understand how members and casual riders use Divvy differently and to translate those behavioral differences into actionable business recommendations for shared micromobility operations, marketing, and rider conversion.
 
@@ -31,7 +31,7 @@ The dataset consists of 24 monthly Divvy trip files covering January 2024 throug
 
 ### Available fields
 
-The uploaded Divvy sample files show the core schema used throughout the project, including the following columns:
+The Divvy files show the core schema used throughout the project, including the following columns:
 
 - `ride_id`
 - `rideable_type`

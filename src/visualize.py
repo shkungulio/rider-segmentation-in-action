@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from config import OUTPUT_CHARTS
 
-sns.set_theme(style="whitegrid")
+sns.set_theme(style="darkgrid")
 
 def save_bar_member(summary_df):
     plt.figure(figsize=(8, 5))
