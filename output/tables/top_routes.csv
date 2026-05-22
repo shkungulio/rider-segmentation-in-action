@@ -1,0 +1,41 @@
+member_casual,route,rides
+casual,Unknown Start → Unknown End,42229
+casual,DuSable Lake Shore Dr & Monroe St → DuSable Lake Shore Dr & Monroe St,2084
+casual,Streeter Dr & Grand Ave → Streeter Dr & Grand Ave,2002
+casual,DuSable Lake Shore Dr & Monroe St → Streeter Dr & Grand Ave,1324
+casual,Michigan Ave & Oak St → Michigan Ave & Oak St,898
+casual,Millennium Park → Millennium Park,882
+casual,Montrose Harbor → Montrose Harbor,839
+casual,Streeter Dr & Grand Ave → DuSable Lake Shore Dr & Monroe St,736
+casual,Adler Planetarium → Adler Planetarium,671
+casual,Dusable Harbor → Dusable Harbor,666
+casual,Shedd Aquarium → Streeter Dr & Grand Ave,664
+casual,Buckingham Fountain → Buckingham Fountain,652
+casual,Dusable Harbor → Streeter Dr & Grand Ave,599
+casual,Ellis Ave & 60th St → University Ave & 57th St,579
+casual,Shedd Aquarium → Shedd Aquarium,565
+casual,DuSable Lake Shore Dr & North Blvd → DuSable Lake Shore Dr & North Blvd,559
+casual,Ellis Ave & 60th St → Ellis Ave & 55th St,555
+casual,Shedd Aquarium → DuSable Lake Shore Dr & Monroe St,541
+casual,DuSable Lake Shore Dr & Monroe St → Shedd Aquarium,538
+casual,Streeter Dr & Grand Ave → Unknown End,533
+member,Unknown Start → Unknown End,74791
+member,University Ave & 57th St → Ellis Ave & 60th St,2135
+member,Ellis Ave & 60th St → University Ave & 57th St,2100
+member,State St & 33rd St → Calumet Ave & 33rd St,1778
+member,Calumet Ave & 33rd St → State St & 33rd St,1747
+member,Ellis Ave & 55th St → Ellis Ave & 60th St,1385
+member,Ellis Ave & 60th St → Ellis Ave & 55th St,1347
+member,Unknown Start → Clinton St & Washington Blvd,948
+member,Unknown Start → Ravenswood Ave & Lawrence Ave,923
+member,Clinton St & Washington Blvd → Unknown End,903
+member,Loomis St & Lexington St → Morgan St & Polk St,860
+member,Blackstone Ave & 59th St → University Ave & 57th St,835
+member,University Ave & 57th St → Kimbark Ave & 53rd St,797
+member,Unknown Start → Clinton St & Madison St,773
+member,Ravenswood Ave & Lawrence Ave → Unknown End,759
+member,University Ave & 57th St → Unknown End,756
+member,University Ave & 57th St → Blackstone Ave & 59th St,737
+member,Unknown Start → University Ave & 57th St,732
+member,Unknown Start → Wells St & Concord Ln,713
+member,Morgan St & Polk St → Loomis St & Lexington St,711
