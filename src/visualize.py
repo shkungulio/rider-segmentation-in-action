@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from config import OUTPUT_CHARTS
 
-sns.set_theme(style="darkgrid")
+sns.set_theme(style="whitegrid")
 
 def save_bar_member(summary_df):
     plt.figure(figsize=(8, 5))
@@ -11,7 +11,7 @@ def save_bar_member(summary_df):
     plt.xlabel("User Type")
     plt.ylabel("Rides")
     plt.tight_layout()
-    plt.savefig(OUTPUT_CHARTS / "rides_by_user_type.png", dpi=200)
+    plt.savefig(OUTPUT_CHARTS / "rides_by_user_type.png", dpi=300)
     plt.close()
 
 def save_monthly_line(month_df):
@@ -22,7 +22,7 @@ def save_monthly_line(month_df):
     plt.ylabel("Rides")
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig(OUTPUT_CHARTS / "monthly_rides_by_user_type.png", dpi=200)
+    plt.savefig(OUTPUT_CHARTS / "monthly_rides_by_user_type.png", dpi=300)
     plt.close()
 
 def save_hourly_line(hour_df):
@@ -32,7 +32,7 @@ def save_hourly_line(hour_df):
     plt.xlabel("Hour of Day")
     plt.ylabel("Rides")
     plt.tight_layout()
-    plt.savefig(OUTPUT_CHARTS / "hourly_usage.png", dpi=200)
+    plt.savefig(OUTPUT_CHARTS / "hourly_usage.png", dpi=300)
     plt.close()
 
 def save_weekday_bar(day_df):
@@ -43,5 +43,5 @@ def save_weekday_bar(day_df):
     plt.ylabel("Rides")
     plt.xticks(rotation=30)
     plt.tight_layout()
-    plt.savefig(OUTPUT_CHARTS / "weekday_usage.png", dpi=200)
+    plt.savefig(OUTPUT_CHARTS / "weekday_usage.png", dpi=300)
     plt.close()
